@@ -30,18 +30,18 @@ def extract_features(img_path,model):
     return normalized_result
 
 
-filenames=[]
-
-for file in os.listdir('images'):
-    filenames.append(os.path.join('images',file))
-
-with ThreadPoolExecutor() as executor:
-    features_list = list(
-        tqdm(
-            executor.map(lambda f: extract_features(f, model),filenames),
-            total=len(filenames)
-        )
-    )
+# filenames=[]
+#
+# for file in os.listdir('images'):
+#     filenames.append(os.path.join('images',file))
+#
+# with ThreadPoolExecutor() as executor:
+#     features_list = list(
+#         tqdm(
+#             executor.map(lambda f: extract_features(f, model),filenames),
+#             total=len(filenames)
+#         )
+#     )
 
 
 
