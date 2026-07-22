@@ -55,13 +55,36 @@ with ThreadPoolExecutor() as executor:
 #
 # pickle.dump(features_list,open('filenames.pkl','wb'))
 
-with open('embedding.pkl','wb') as f:
-    pickle.dump(features_list, f)
+# with open('embedding.pkl','wb') as f:
+#     pickle.dump(features_list, f)
+#
+# with open('filenames.pkl','wb') as f:
+#     pickle.dump(filenames, f)
 
-with open('filenames.pkl','wb') as f:
-    pickle.dump(filenames, f)
 
 
+import os
+import pickle
+import gdown
+import numpy as np
+
+# --- embedding.pkl ---
+embedding_path = "embedding.pkl"
+if not os.path.exists(embedding_path):
+    file_id = "1X22IuWE2GKIHZiaGa7P7acpHPvX7GjKZ"
+    url = f"https://drive.google.com/uc?id={file_id}"
+    print("Downloading embedding.pkl from Google Drive...")
+    gdown.download(url, embedding_path, quiet=False)
+features_list = np.array(pickle.load(open(embedding_path, "rb")))
+
+# --- filenames.pkl ---
+filenames_path = "filenames.pkl"
+if not os.path.exists(filenames_path):
+    file_id = "1_lkgAANr8IurB2vKq05Vu4t-FLpP_hzz"
+    url = f"https://drive.google.com/uc?id={file_id}"
+    print("Downloading filenames.pkl from Google Drive...")
+    gdown.download(url, filenames_path, quiet=False)
+filenames = pickle.load(open(filenames_path, "rb"))
 
 
 
