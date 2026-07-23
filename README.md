@@ -79,10 +79,4 @@ Deploy on Heroku / Streamlit Cloud for easy access.
 Developed by Soni  
 Fashion + Deep Learning Enthusiast ✨
 
-Code
 
----
-
-👉 This README gives you a professional structure: project intro, features, setup, usage, dependencies, dataset info, and future improvements.  
-
-Do you want me to also add **screenshots section** (with placeholders) so you can show how the app looks when running? That makes the README even more appealing.
